@@ -196,8 +196,8 @@ type Model struct {
 }
 
 // New returns a new model with sensible defaults.
-func New(items []Item, delegate ItemDelegate, width, height int) Model {
-	styles := DefaultStyles()
+func New(renderer *lipgloss.Renderer, items []Item, delegate ItemDelegate, width, height int) Model {
+	styles := DefaultStyles(renderer)
 
 	sp := spinner.New()
 	sp.Spinner = spinner.Line
